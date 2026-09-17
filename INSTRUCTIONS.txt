@@ -1,0 +1,36 @@
+PETE SCHUIL HUB — QUICK-WINS UPDATE (GA4 integrated) — 2026-09-17
+================================================================
+Merges into your repo (Zimbot-git/the-life-briefing). Folder layout mirrors the repo.
+
+1) ADD / REPLACE (paths from repo root):
+   index.html                          -> REPLACE
+   robots.txt                          -> ADD (root)
+   sitemap.xml                         -> ADD (root)
+   .nojekyll                           -> ADD (root; hidden file — see note C)
+   pete-portrait.webp                  -> ADD (root)
+   images/tlb-hero-image-web.webp      -> ADD
+   images/tvfmo-book-cover-web.webp    -> ADD
+   images/plc-book-cover-web.webp      -> ADD
+   media/tvfmo/TVFMO-19-mockup.webp    -> ADD
+   (Keep the old .png/.jpg originals for now — rollback safety.)
+
+2) GOOGLE ANALYTICS — ALREADY DONE:
+   GA4 is wired with G-GDSS0CYHRS (the peteschuil.live web stream). No edit needed.
+   After deploy: open GA4 > Realtime, visit peteschuil.live, confirm your visit shows.
+   In GA4 admin: (a) mark event "join_click" as a Key Event (conversion);
+   (b) confirm cross-domain measurement lists BOTH peteschuil.live and
+       shop.peteschuil.live so hub->shop journeys are one session.
+   Events wired: join_click (with cta_location: header/hero/subscribe) + shop_click.
+   NOTE: if you intended G-4MRT2BDN6L for the hub instead, tell Claude — one-line swap.
+
+3) REPO CLEANUP — mostly done already. Still present, optional to remove:
+   og-image.png   (superseded by og-image.jpg — safe to delete)
+   README.md      (internal; optional)
+
+4) AFTER deploy + you CONFIRM all images still show, delete the old originals:
+   images/tlb-hero-image-web.png, pete-portrait.jpg,
+   media/tvfmo/TVFMO-19-mockup.png, images/tvfmo-book-cover-web.png,
+   images/plc-book-cover-web.jpg, and the root duplicate TVFMO-19-mockup.png
+
+NOTE C — .nojekyll is hidden and may not copy on Windows. Easiest: in GitHub click
+   Add file > Create new file, name it exactly ".nojekyll", commit. (Best-practice, optional.)

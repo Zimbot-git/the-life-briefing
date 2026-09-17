@@ -109,7 +109,7 @@
 
   /* ---- hero ---- */
   .hero{position:relative;min-height:calc(100vh - 88px);color:var(--sand);overflow:hidden;padding:0}
-  .hero-bg{position:absolute;top:0;right:0;bottom:0;left:0;background-image:url('./images/tlb-hero-image-web.png');background-size:cover;background-position:center;transform:scale(1.03)}
+  .hero-bg{position:absolute;top:0;right:0;bottom:0;left:0;background-image:url('./images/tlb-hero-image-web.webp');background-size:cover;background-position:center;transform:scale(1.03)}
   .hero-overlay{position:absolute;top:0;right:0;bottom:0;left:0;background:linear-gradient(180deg,rgba(28,42,54,.50) 0%,rgba(28,42,54,.55) 45%,rgba(28,42,54,.64) 100%)}
   .hero-inner{position:relative;z-index:2;padding:44px 0;max-width:524px;margin-right:auto;margin-left:clamp(-320px,calc(548px - 50vw),-40px)}
   .hero .emblem{width:88px;height:88px;flex:0 0 88px;margin:0}
@@ -310,6 +310,9 @@
   #contact .sec-head{margin-bottom:24px}
   @media(max-width:600px){.cf-grid{grid-template-columns:1fr}}
 </style>
+  <!-- Google Analytics 4 — replace G-GDSS0CYHRS with the peteschuil.live web-stream Measurement ID -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GDSS0CYHRS"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-GDSS0CYHRS');</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -429,7 +432,7 @@
       <div class="about-grid">
         <div>
           <figure class="portrait-frame">
-            <img src="./pete-portrait.jpg" alt="Portrait of Pete Schuil, smiling, wearing a captain's shirt with four gold bars and navy glasses" width="320" height="320">
+            <img src="./pete-portrait.webp" loading="lazy" alt="Portrait of Pete Schuil, smiling, wearing a captain's shirt with four gold bars and navy glasses" width="320" height="320">
             <figcaption class="portrait-cap">Pete Schuil</figcaption>
           </figure>
         </div>
@@ -466,7 +469,7 @@
       </div>
       <div class="eco-grid">
         <a class="eco-card eco-card-link" href="https://shop.peteschuil.live" target="_blank" rel="noopener">
-          <img class="ec-img" src="./media/tvfmo/TVFMO-19-mockup.png" alt="Chimanimanis from a Plane — original oil painting by Pete Schuil, the painting that inspired The View From My Office">
+          <img class="ec-img" src="./media/tvfmo/TVFMO-19-mockup.webp" loading="lazy" alt="Chimanimanis from a Plane — original oil painting by Pete Schuil, the painting that inspired The View From My Office">
           <div class="ec-body">
             <span class="badge live">Available now</span>
             <h3>The View From My Office</h3>
@@ -475,14 +478,14 @@
           </div>
         </a>
         <article class="eco-card">
-          <img class="ec-img" src="./images/tvfmo-book-cover-web.png" alt="The View From My Office — Memoirs of a Bush Pilot, book cover">
+          <img class="ec-img" src="./images/tvfmo-book-cover-web.webp" loading="lazy" alt="The View From My Office — Memoirs of a Bush Pilot, book cover">
           <div class="ec-body">
           <span class="badge">Coming soon</span>
           <h3>The View From My Office <span class="eco-subtitle">— Memoirs of a Bush Pilot</span></h3>
           <p>See the world from Pete's eyes in his exclusive coffee-table book, showcasing his oil paintings and favourite photographs as he documents his many journeys as a bush pilot. Watch this space...</p>
         </div></article>
         <article class="eco-card">
-          <img class="ec-img" src="./images/plc-book-cover-web.jpg" alt="The Power of Lifestyle Change — A Diabetes Success Story, book cover">
+          <img class="ec-img" src="./images/plc-book-cover-web.webp" loading="lazy" alt="The Power of Lifestyle Change — A Diabetes Success Story, book cover">
           <div class="ec-body">
           <span class="badge">Coming soon</span>
           <h3>The Power of Lifestyle Change</h3>
@@ -781,5 +784,7 @@
   }
 })();
 </script>
+<script>/* GA4 funnel: Join-on-WhatsApp intent + cross-sell to print shop */
+document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("a");if(!a)return;var href=a.getAttribute("href")||"";if(/wa\.me\/263787948316/.test(href)&&/JOIN/i.test(href)){if(window.gtag)gtag("event","join_click",{cta_location:(a.closest("header")?"header":(a.closest("#subscribe")?"subscribe":"hero"))});}else if(/shop\.peteschuil\.live/.test(href)){if(window.gtag)gtag("event","shop_click",{link_url:href});}});</script>
 </body>
 </html>
