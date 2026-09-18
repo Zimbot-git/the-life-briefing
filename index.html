@@ -309,6 +309,21 @@
   #contact{padding-top:60px;padding-bottom:66px}
   #contact .sec-head{margin-bottom:24px}
   @media(max-width:600px){.cf-grid{grid-template-columns:1fr}}
+  /* ---- trust signals (added) ---- */
+  .trust-row{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:10px 22px;margin:14px 0 22px;padding:0}
+  .trust-row li{display:flex;align-items:center;gap:7px;font-size:.92rem;color:#c8d0cf}
+  .trust-row svg{width:16px;height:16px;color:var(--gold);flex:0 0 16px}
+  .foot-pay{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px 16px;padding:22px 0 4px;border-top:1px solid rgba(240,232,216,.10);margin-top:6px}
+  .foot-pay-label{font-size:.86rem;color:#9aa3a5;letter-spacing:.02em}
+  .foot-pay-methods{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+  .pay-badge{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border:1px solid rgba(240,232,216,.22);border-radius:8px;color:var(--sand);text-decoration:none;font-size:.9rem;font-weight:500;background:rgba(240,232,216,.03)}
+  a.pay-badge:hover{border-color:var(--gold);color:#fff}
+  .pay-badge--static{opacity:.85}
+  .pay-chip{display:inline-flex;align-items:center;justify-content:center;background:#fff;border-radius:8px;padding:0 14px;height:38px;box-sizing:border-box;text-decoration:none}
+  .pay-chip img{height:22px;width:auto;display:block}
+  .pay-chip--text{color:var(--navy);font-weight:600;font-size:.86rem}
+  a.pay-chip{transition:box-shadow .15s}
+  a.pay-chip:hover{box-shadow:0 0 0 2px var(--gold)}
 </style>
   <!-- Google Analytics 4 — replace G-GDSS0CYHRS with the peteschuil.live web-stream Measurement ID -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-GDSS0CYHRS"></script>
@@ -329,7 +344,7 @@
         <li><a href="#briefing">How it works</a></li>
         <li><a href="#about">Meet Pete</a></li>
         <li><a href="#ecosystem">More</a></li>
-        <li><a href="#subscribe">Subscribe</a></li>
+        <li><a href="https://shop.peteschuil.live">Shop</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -518,7 +533,7 @@
       <p class="sec-eyebrow">How to subscribe</p>
       <h2 id="sub-h">Start tomorrow morning</h2>
       <div class="price-tag">US$4.95<small> / month</small></div>
-      <p style="color:#c8d0cf">Cancel anytime. New subscribers are covered by a 7-day refund.</p>
+      <ul class="trust-row" aria-label="What to expect"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Cancel anytime</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>7-day refund for new subscribers</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Secure payment via Paynow &amp; EcoCash</li><li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-.607z"/></svg>Delivered on WhatsApp — no new app</li></ul>
       <ol class="sub-steps">
         <li><b>1 · Send JOIN</b><p>Message us on WhatsApp with the word JOIN.</p></li>
         <li><b>2 · Pay securely</b><p>We send a payment link. Settle in USD via Paynow or EcoCash.</p></li>
@@ -610,6 +625,14 @@
           <li><a href="mailto:pete@peteschuil.live">Email Pete</a></li>
         </ul>
       </div>
+    </div>
+    <div class="foot-pay">
+      <span class="foot-pay-label">Secure payment across the Pete Schuil ecosystem</span>
+      <span class="foot-pay-methods">
+        <a class="pay-chip" href="https://paynow.co.zw" target="_blank" rel="noopener" aria-label="Paynow"><img src="./images/paynow.png" alt="Paynow" height="22" loading="lazy"></a>
+        <a class="pay-chip" href="https://payoneer.com" target="_blank" rel="noopener" aria-label="Payoneer"><img src="./images/payoneer.png" alt="Payoneer" height="22" loading="lazy"></a>
+        <span class="pay-chip pay-chip--text">Bank transfer</span>
+      </span>
     </div>
     <div class="foot-bottom">
       <span>© 2026 Pete Schuil · All Rights Reserved</span>
