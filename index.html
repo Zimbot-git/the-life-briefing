@@ -4,7 +4,9 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pete Schuil — Pilot, Entrepreneur, Artist, Author</title>
+<script>/* Founding-offer switch (Gate 4d). 00:00 Fri 1 Jan 2027 Harare = 2026-12-31T22:00:00Z. Without JavaScript the page shows the standard (US$4.95) version. Test views: ?lbview=standard, ?lbview=after (forward-only: nothing can show the founding version after the switch). Re-checked at the switch moment, when the tab is shown again, and on back/forward. */
+(function(){var h=document.documentElement,S=Date.UTC(2026,11,31,22,0,0),v="";try{v=(/[?&]lbview=(after|standard)(?:&|$)/.exec(location.search)||[])[1]||"";}catch(e){}function set(){var c=(" "+h.className+" ").replace(/ (founding|after)(?= )/g," ");if(v==="after"||Date.now()>=S){c+=" after";}else if(v!=="standard"){c+=" founding";}h.className=c.replace(/\s+/g," ").trim();}set();var ms=S-Date.now();if(ms>0&&ms<2147483647){setTimeout(set,ms+500);}window.addEventListener("pageshow",set);document.addEventListener("visibilitychange",set);})();</script>
+<title>Pete Schuil — Pilot · Entrepreneur · Artist · Author · Mentor</title>
 <meta name="description" content="Pete Schuil is a Zimbabwean chartered accountant, commercial pilot and artist who has spent half a century building and rescuing businesses across southern Africa — and now shares what he has learned about what lasts.">
 <meta name="author" content="Michael Peter (Pete) Schuil">
 <link rel="canonical" href="https://peteschuil.live/">
@@ -14,18 +16,18 @@
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Pete Schuil">
-<meta property="og:title" content="Pete Schuil — Pilot, Entrepreneur, Artist, Author">
+<meta property="og:title" content="Pete Schuil — Pilot · Entrepreneur · Artist · Author · Mentor">
 <meta property="og:description" content="Pete Schuil is a Zimbabwean chartered accountant, commercial pilot and artist who has spent half a century building and rescuing businesses across southern Africa — and now shares what he has learned about what lasts.">
 <meta property="og:url" content="https://peteschuil.live/">
-<meta property="og:image" content="https://peteschuil.live/og-image.jpg">
+<meta property="og:image" content="https://peteschuil.live/og-image.jpg?v=20261109">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Pete Schuil — Pilot, Entrepreneur, Artist, Author">
+<meta property="og:image:alt" content="Pete Schuil — Pilot · Entrepreneur · Artist · Author · Mentor">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Pete Schuil — Pilot, Entrepreneur, Artist, Author">
+<meta name="twitter:title" content="Pete Schuil — Pilot · Entrepreneur · Artist · Author · Mentor">
 <meta name="twitter:description" content="Pete Schuil is a Zimbabwean chartered accountant, commercial pilot and artist who has spent half a century building and rescuing businesses across southern Africa — and now shares what he has learned about what lasts.">
-<meta name="twitter:image" content="https://peteschuil.live/og-image.jpg">
+<meta name="twitter:image" content="https://peteschuil.live/og-image.jpg?v=20261109">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -324,6 +326,35 @@
   .pay-chip--text{color:var(--navy);font-weight:600;font-size:.86rem}
   a.pay-chip{transition:box-shadow .15s}
   a.pay-chip:hover{box-shadow:0 0 0 2px var(--gold)}
+
+  /* ---- Gate 4d (2026-11-09): founding-offer switch ---- */
+  html:not(.founding) .fo{display:none!important}
+  html.founding .st{display:none!important}
+  html:not(.after) .af{display:none!important}
+  .hero .price a{color:var(--sand);text-decoration:underline;text-underline-offset:2px}
+  .hero .price a:hover{color:#fff}
+  .hero .optin{font-size:.8rem;line-height:1.55;color:#c8d0cf;margin:14px 0 0;max-width:470px}
+  .hero-slide[data-slide="0"] .hero-inner{padding-bottom:112px} /* keeps the opt-in line clear of the slide dots and scroll cue */
+  .price-line{max-width:640px;margin:12px auto 0;font-size:1rem;line-height:1.6;color:#e3ddcf}
+  .closed-note{font-size:.92rem;color:#aeb7b6;margin:10px 0 0}
+  .usd-note + .usd-note{margin-top:6px}
+  .subscribe .usd-note{max-width:640px;margin-left:auto;margin-right:auto}
+  footer.site p.foot-legal{max-width:760px;margin:18px auto 24px;font-size:.82rem;line-height:1.6;color:#8b9499;text-align:center}
+  footer.site p.foot-legal a{color:#b9c2c4}
+  .legal-body ol{padding-left:22px;margin-bottom:12px}
+  .legal-body ol li{margin-bottom:10px}
+  .print-wrap{margin-top:6px}
+  /* ---- Gate 4d: printing a legal page prints the whole policy ---- */
+  @media print{
+    /* two separate rules: a browser that does not understand :has() must still apply the second */
+    body:has(.legal:target)>*:not(.legal){display:none!important}
+    html.print-legal body>*:not(.legal){display:none!important}
+    .legal:target{position:static!important;overflow:visible!important;animation:none!important;background:#fff!important}
+    html.print-legal .legal:target{display:block!important}
+    .legal-head,.print-wrap{display:none!important}
+    .legal-body{max-width:none!important;padding:0!important}
+    .legal-body h2{break-after:avoid;page-break-after:avoid}
+  }
 </style>
   <!-- Google Analytics 4 — replace G-GDSS0CYHRS with the peteschuil.live web-stream Measurement ID -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-GDSS0CYHRS"></script>
@@ -368,8 +399,8 @@
         <div class="hero-head"><div class="emblem"><svg viewBox="0 0 120 120" role="img" aria-label="Solitude emblem"><defs><clipPath id="clhero"><circle cx="60" cy="60" r="54"/></clipPath></defs><g clip-path="url(#clhero)"><rect x="6" y="6" width="108" height="108" fill="#F0E8D8"/><circle cx="34" cy="80" r="12" fill="#C08A2D"/><path d="M6 84 Q30 77 58 81 Q82 83 114 80 L114 84 Z" fill="#2C4A35"/><rect x="6" y="84" width="108" height="32" fill="#1C2A36"/><line x1="6" y1="84" x2="114" y2="84" stroke="#C7B584" stroke-width="0.8" opacity="0.6"/><polygon points="31,84 37,84 35,111 33,111" fill="#C08A2D" opacity="0.5"/><rect x="82" y="84" width="7" height="10" fill="#33485A" opacity="0.4"/><path d="M82 84 L82 67 C82 66 83 66 84 66 L88 66 C89 66 89 67 89 68 L89 84 Z" fill="#1C2A36"/><path d="M89 71 L94 68 L89 73 Z" fill="#1C2A36"/><path d="M68 35 C72 31 76 29 81 29 C85 29 88 31 89 35 C89 39 88 43 88 47 C88 52 90 56 91 60 C92 63 93 66 93 69 C94 74 96 79 98 84 C96 80 94 76 92 72 C91 70 90 69 88 68 C84 69 80 69 77 67 C75 65 74 62 74 59 C74 55 75 51 77 48 C78 45 79 41 79 38 C79 36 78 35 76 35 C73 35 70 36 68 37 C67 37 67 36 68 35 Z" fill="#1C2A36"/></g><circle cx="60" cy="60" r="54" fill="none" stroke="#C08A2D" stroke-opacity="0.6" stroke-width="2"/></svg></div>
         <p class="eyebrow"><span class="eb-1">Pete Schuil</span><span class="eb-2">Living Intentionally for Excellence</span></p></div>
         <h1>Five minutes each morning to live the day <span class="accent">on purpose</span>.</h1>
-        <p class="lead">The LIFE Briefing is a calm, five-minute audio briefing on mindset and growth — delivered to your WhatsApp every morning by Pete Schuil.</p>
-        <p class="price">Just <b>US$4.95 / month</b>. Cancel anytime.</p>
+        <p class="lead">The LIFE Briefing is a calm, five-minute audio briefing on mindset and growth — delivered to your WhatsApp every weekday morning by Pete Schuil.</p>
+        <p class="price"><span class="fo" data-nosnippet>Founding membership is open until 31 December 2026 — <a href="#subscribe">see the founding rate below</a>. No automatic charges.</span><span class="st"><b>US$4.95 a month.</b> No automatic charges.</span></p>
         <div class="hero-cta">
           <a class="btn btn-gold" href="https://wa.me/263787948316?text=JOIN">
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
@@ -377,6 +408,7 @@
           </a>
           <a class="btn btn-ghost" href="#briefing">See how it works</a>
         </div>
+        <p class="optin">By sending JOIN, you agree to receive WhatsApp messages from The LIFE Briefing with Pete Schuil about your sign-up and your membership. Reply STOP at any time.</p>
       </div>
     </div>
     </div>
@@ -413,9 +445,9 @@
       </div>
 
       <ol class="steps" aria-label="How to get started">
-        <li class="step"><div class="num">1</div><h3>Send “JOIN”</h3><p>Tap the button and send <strong>JOIN</strong> to us on WhatsApp. That’s the whole sign-up.</p></li>
-        <li class="step"><div class="num">2</div><h3>Subscribe</h3><p>We send a secure link to start your US$4.95/month subscription. USD only.</p></li>
-        <li class="step"><div class="num">3</div><h3>Listen daily</h3><p>Each morning a fresh five-minute audio briefing arrives in your chat. Press play.</p></li>
+        <li class="step"><div class="num">1</div><h3>Send “JOIN”</h3><p>Tap the button and send <strong>JOIN</strong> to us on WhatsApp. Tap YES, then tell us your name and email.</p></li>
+        <li class="step"><div class="num">2</div><h3>Subscribe</h3><p>Tap <strong>I’m ready</strong> and we’ll send your personal payment link. Tap <strong>Continue to payment</strong>: your payment page shows the full amount before you pay. USD only.</p></li>
+        <li class="step"><div class="num">3</div><h3>Listen daily</h3><p>Every weekday morning, Monday to Friday, a fresh five-minute audio briefing arrives in the members’ private WhatsApp group. Press play.</p></li>
       </ol>
 
       <div class="features">
@@ -455,7 +487,7 @@
           <p class="sec-eyebrow">Meet Pete</p>
           <h2 id="about-h">A lifetime of flying, learning, and living deliberately</h2>
           <p>For fifty years, Pete Schuil has been a builder.</p>
-          <p>He qualified as a Chartered Accountant in Zimbabwe and spent his early career examining the next generation of accountants — then spent the four decades that followed structuring, funding and rescuing enterprises across Zimbabwe, Malawi, Zambia, Mozambique and beyond. He has restructured companies out of the path of liquidation, helped design privatisation frameworks for governments, and worked with institutions including the African Development Bank and the World Bank Group. Along the way he founded businesses of his own — some that lasted, some that didn't, all of which taught him something.</p>
+          <p>He qualified as a Chartered Accountant in Zimbabwe and spent his early career examining the next generation of accountants — then spent the four decades that followed structuring, funding and rescuing enterprises across Zimbabwe, Malawi, Zambia, Mozambique and beyond. He has restructured companies out of the path of liquidation, helped design privatisation frameworks for governments, and worked with institutions including the African Development Bank and the World Bank Group. Along the way he founded businesses of his own — some that lasted, some that didn’t, all of which taught him something.</p>
           <p>His other office has been the cockpit. A commercial pilot with more than 8,000 hours, multi-engine and instrument rated and Cranfield-qualified in aviation safety, he has built the safety and operations systems for aviation companies across the region — and flown the landscapes that became his paintings.</p>
           <p>Because that is the other thing Pete does: he paints. His canvases capture the rivers, escarpments and skies of southern Africa as only someone who has flown low over them for half a century could see them. And after turning around his own health, he wrote a plain, practical book about it, so that others might do the same.</p>
           <p>Chartered accountant, pilot, artist, author — but underneath all of it, one thing: a man who builds what works, mends what is failing, and shares what lasts.</p>
@@ -488,7 +520,7 @@
           <div class="ec-body">
             <span class="badge live">Available now</span>
             <h3>The View From My Office</h3>
-            <p>Fine-art canvas prints of Pete's original paintings — the rivers, escarpments and skies of southern Africa, seen from the cockpit. Made to order in Zimbabwe, shipped worldwide.</p>
+            <p>Fine-art canvas prints of Pete’s original paintings — the rivers, escarpments and skies of southern Africa, seen from the cockpit. Made to order in Zimbabwe, shipped worldwide.</p>
             <span class="ec-cta">Browse the collection →</span>
           </div>
         </a>
@@ -497,7 +529,7 @@
           <div class="ec-body">
           <span class="badge">Coming soon</span>
           <h3>The View From My Office <span class="eco-subtitle">— Memoirs of a Bush Pilot</span></h3>
-          <p>See the world from Pete's eyes in his exclusive coffee-table book, showcasing his oil paintings and favourite photographs as he documents his many journeys as a bush pilot. Watch this space...</p>
+          <p>See the world from Pete’s eyes in his exclusive coffee-table book, showcasing his oil paintings and favourite photographs as he documents his many journeys as a bush pilot. Watch this space...</p>
         </div></article>
         <article class="eco-card">
           <img class="ec-img" src="./images/plc-book-cover-web.webp" loading="lazy" alt="The Power of Lifestyle Change — A Diabetes Success Story, book cover">
@@ -507,7 +539,7 @@
           <p>Gain practical health and lifestyle wisdom, and learn about Pete’s journey of living with diabetes, medication-free and reclaiming his life, career, and the ability to do the things he loves.</p>
         </div></article>
         <article class="eco-card"><div class="ec-body">
-          <span class="badge live">Part of your subscription</span>
+          <span class="badge">Coming soon</span>
           <h3>Audio archive</h3>
           <p>Past briefings gathered into a searchable, playable library — listen back whenever you need them.</p>
         </div></article>
@@ -532,18 +564,22 @@
     <div class="container">
       <p class="sec-eyebrow">How to subscribe</p>
       <h2 id="sub-h">Start tomorrow morning</h2>
-      <div class="price-tag">US$4.95<small> / month</small></div>
-      <ul class="trust-row" aria-label="What to expect"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Cancel anytime</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>7-day refund for new subscribers</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Secure payment via Paynow &amp; EcoCash</li><li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-.607z"/></svg>Delivered on WhatsApp — no new app</li></ul>
+      <div class="price-tag fo" data-nosnippet>US$3<small> / month</small></div>
+      <p class="price-line fo" data-nosnippet>Founding membership: US$3 a month for as long as you stay a member (renew within 30 days of your membership’s end date). Sign up on WhatsApp by 31 December 2026 and pay by 7 January 2027. From 1 January 2027, new members pay US$4.95 a month.</p>
+      <div class="price-tag st">US$4.95<small> / month</small></div>
+      <p class="closed-note af">Founding membership closed on 31 December 2026.</p>
+      <ul class="trust-row" aria-label="What to expect"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>No automatic charges</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>7-day refund on every payment</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Secure payment via Paynow &amp; EcoCash</li><li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-.607z"/></svg>Delivered on WhatsApp — no new app</li></ul>
       <ol class="sub-steps">
-        <li><b>1 · Send JOIN</b><p>Message us on WhatsApp with the word JOIN.</p></li>
-        <li><b>2 · Pay securely</b><p>We send a payment link. Settle in USD via Paynow or EcoCash.</p></li>
-        <li><b>3 · Press play</b><p>Your first five-minute briefing arrives the next morning.</p></li>
+        <li><b>1 · Send JOIN</b><p>Message us on WhatsApp with the word JOIN, then tap YES.</p></li>
+        <li><b>2 · Pay securely</b><p>Tell us your name and email, tap I’m ready, then tap Continue to payment. Your payment page shows the full amount before you pay.</p></li>
+        <li><b>3 · Press play</b><p>Your first five-minute briefing arrives the next weekday morning.</p></li>
       </ol>
       <a class="btn btn-gold" href="https://wa.me/263787948316?text=JOIN">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
         Join on WhatsApp
       </a>
-      <p class="usd-note">All payments are processed in US Dollars (USD). To unsubscribe at any time, simply reply STOP on WhatsApp.</p>
+      <p class="usd-note">By sending JOIN, you agree to receive WhatsApp messages from The LIFE Briefing with Pete Schuil about your sign-up and your membership. Reply STOP at any time.</p>
+      <p class="usd-note">All payments are in US dollars.</p>
     </div>
   </section>
 
@@ -634,6 +670,7 @@
         <span class="pay-chip pay-chip--text">Bank transfer</span>
       </span>
     </div>
+    <p class="foot-legal">The LIFE Briefing is provided by Sparks &amp; Flames Enterprises (PRIVATE) LIMITED, a private limited company registered in Zimbabwe. Registered address: 162 The Chase, Mount Pleasant, Harare, Zimbabwe. WhatsApp +263&nbsp;787&nbsp;948&nbsp;316 · <a href="mailto:pete@peteschuil.live">pete@peteschuil.live</a> · peteschuil.live. Prices are in US dollars.</p>
     <div class="foot-bottom">
       <span>© 2026 Pete Schuil · All Rights Reserved</span>
       <span><a href="#privacy">Privacy Policy</a> &nbsp;·&nbsp; <a href="#terms">Terms of Service</a></span>
@@ -649,7 +686,7 @@
   </div>
   <div class="legal-body">
     <h1>Privacy Policy</h1>
-    <p class="eff">Effective 15 July 2026</p>
+    <p class="eff">Effective 22 November 2026</p>
     <p>This Privacy Policy explains how your information is handled when you use The LIFE Briefing with Pete Schuil (the “Service”). The Service is operated by <strong>Sparks & Flames Enterprises (PRIVATE) LIMITED</strong>, trading as The LIFE Briefing with Pete Schuil, at 162 The Chase, Mount Pleasant, Harare, Zimbabwe (“we”, “us”, “our”). You can contact us at <a href="mailto:pete@peteschuil.live">pete@peteschuil.live</a> or on WhatsApp at +263&nbsp;787&nbsp;948&nbsp;316.</p>
 
     <h2>Information we collect</h2>
@@ -657,6 +694,7 @@
       <li>Your name, as you provide it to us;</li>
       <li>Your WhatsApp mobile number (this is how the briefing is delivered);</li>
       <li>Your email address, if you give it to us;</li>
+      <li>The date and time you complete sign-up (we use it to apply the founding rate);</li>
       <li>A payment reference or confirmation from your payment provider;</li>
       <li>Messages you send us and basic, non-identifying technical data when you visit this website.</li>
     </ul>
@@ -674,7 +712,7 @@
     </ul>
 
     <h2>Your consent</h2>
-    <p>By sending JOIN and subscribing, you consent to receiving the briefings and related service messages from us on WhatsApp.</p>
+    <p>By sending JOIN, or by completing the sign-up form on this website, and subscribing, you consent to receiving the briefings and related service messages from us on WhatsApp.</p>
 
     <h2>Sharing your information</h2>
     <p>We share information only where necessary to run the Service: with WhatsApp/Meta (to deliver messages), with our payment providers (to process payments), and with trusted service providers such as our website host. <strong>We do not sell your personal information.</strong></p>
@@ -687,6 +725,9 @@
 
     <h2>Opting out</h2>
     <p>You can unsubscribe at any time by replying <strong>STOP</strong> on WhatsApp, or by emailing us to be removed.</p>
+
+    <h2>Your right to object to marketing</h2>
+    <p>You can object to marketing from us at any time, free of charge. Reply <strong>STOP</strong> on WhatsApp or email <a href="mailto:pete@peteschuil.live">pete@peteschuil.live</a>, and we will stop.</p>
 
     <h2>Your rights</h2>
     <p>You may ask us to access, correct, or delete the personal information we hold about you. Email <a href="mailto:pete@peteschuil.live">pete@peteschuil.live</a> and we will respond within a reasonable time.</p>
@@ -713,23 +754,36 @@
   </div>
   <div class="legal-body">
     <h1>Terms of Service</h1>
-    <p class="eff">Effective 15 July 2026</p>
+    <p class="eff">Effective 22 November 2026</p>
     <p>These Terms govern your use of The LIFE Briefing with Pete Schuil (the “Service”), operated by <strong>Sparks & Flames Enterprises (PRIVATE) LIMITED</strong>, trading as The LIFE Briefing with Pete Schuil, at 162 The Chase, Mount Pleasant, Harare, Zimbabwe (“we”, “us”, “our”). By subscribing to or using the Service, you agree to these Terms.</p>
 
     <h2>The Service</h2>
-    <p>The Service is a daily audio briefing of approximately five minutes on mindset and personal development, delivered to you via WhatsApp. It is provided for general informational and educational purposes.</p>
+    <p>The Service is an audio briefing of approximately five minutes on mindset and personal development, delivered to you via WhatsApp each weekday (Monday to Friday). It is provided for general informational and educational purposes.</p>
 
     <h2>Eligibility</h2>
     <p>You must be at least 18 years old to subscribe.</p>
 
-    <h2>Subscription &amp; billing</h2>
-    <p>The subscription costs <strong>US$4.95 per month</strong>, billed in US Dollars only, and renews automatically each month until you cancel. Payments are processed by Paynow or EcoCash. By subscribing, you authorise these recurring monthly charges.</p>
+    <h2>Subscription and payment</h2>
+    <p>Membership costs <strong>US$4.95 a month</strong>, or <strong>US$3.00 a month</strong> for Founding Members (see below), in US dollars. The amount on your Paynow payment page is the full amount we charge; we cover Paynow’s processing charge. Each payment gives you 30 days of access from the day you pay or, if you renew before your current period ends, from the day it ends. Renewal is manual: nothing is ever taken from your account automatically, and we will remind you on WhatsApp before your membership ends.</p>
+
+    <h2>Founding membership</h2>
+    <ol>
+      <li>You are a Founding Member if you complete our sign-up questions on WhatsApp, or our sign-up form on peteschuil.live, by 11:59 pm Harare time on 31 December 2026 and start your first payment on our payment page by 11:59 pm Harare time on 7 January 2027, or if you paid for the Service before founding membership opened in November 2026.</li>
+      <li>Founding Members pay US$3.00 a month. We will not increase this rate for as long as you remain a Founding Member and we provide the Service.</li>
+      <li>You remain a Founding Member as long as each renewal payment is made within 30 days after the end date of your last paid period. If you do not renew within those 30 days, founding membership ends, and you may rejoin at the standard price then in force.</li>
+      <li>A payment that is refunded is treated as never having been made.</li>
+      <li>Founding membership is personal to you and linked to your WhatsApp number. It cannot be transferred to anyone else. If you change your number, contact us and we will move your membership to your new number.</li>
+      <li>If a confirmed EcoCash or Paynow outage stops you paying within the 30 days, we will extend that period by the length of the outage plus 48 hours.</li>
+    </ol>
+
+    <h2>Your record of payment</h2>
+    <p>Our WhatsApp welcome message confirms your payment and your membership end date. For a receipt at any time, email <a href="mailto:pete@peteschuil.live">pete@peteschuil.live</a>.</p>
 
     <h2>Cancellation</h2>
     <p>You may cancel at any time by replying <strong>STOP</strong> on WhatsApp or by emailing <a href="mailto:pete@peteschuil.live">pete@peteschuil.live</a>. Your access continues until the end of the period you have paid for.</p>
 
     <h2>Refunds</h2>
-    <p>New subscribers may request a full refund within <strong>7 days</strong> of their first payment by emailing <a href="mailto:pete@peteschuil.live">pete@peteschuil.live</a>. After 7 days, payments are non-refundable except where a refund is required by law.</p>
+    <p>You may cancel any payment, including a renewal, within <strong>7 days</strong> of making it, without giving a reason, by messaging us on WhatsApp or emailing <a href="mailto:pete@peteschuil.live">pete@peteschuil.live</a>. We will refund the full amount you paid within 14 days, and your access for that period ends. This is in addition to your other rights under the Consumer Protection Act [Chapter 14:44].</p>
 
     <h2>Intellectual property</h2>
     <p>All content of the Service — including audio, text, and artwork — is owned by Sparks & Flames Enterprises (PRIVATE) LIMITED, trading as The LIFE Briefing with Pete Schuil. You are granted a personal, non-transferable, non-commercial licence to listen for your own use. You may not copy, record, redistribute, publicly share, or resell any content without written permission.</p>
@@ -741,19 +795,29 @@
     <p>The Service offers general perspective and is not medical, financial, legal, or other professional advice. Always seek a qualified professional for advice on your particular situation.</p>
 
     <h2>Availability</h2>
-    <p>We aim to deliver a briefing every day, but the Service is provided “as is” and depends on third-party platforms such as WhatsApp. We do not guarantee uninterrupted or error-free delivery.</p>
+    <p>We aim to deliver a briefing every weekday (Monday to Friday), but the Service is provided “as is” and depends on third-party platforms such as WhatsApp. We do not guarantee uninterrupted or error-free delivery.</p>
 
     <h2>Limitation of liability</h2>
     <p>To the fullest extent permitted by law, we are not liable for indirect, incidental, or consequential losses arising from your use of the Service. Our total liability to you will not exceed the amount you paid us in the three (3) months before the claim.</p>
 
     <h2>Changes to the Service or price</h2>
-    <p>We may change the content, features, or price of the Service with reasonable notice. If you continue to use the Service after a change takes effect, you accept it; otherwise you may cancel.</p>
+    <p>We may change the content or features of the Service, or the standard price for new members, with at least 30 days’ notice on WhatsApp. A change to the standard price applies from your next renewal after the notice period ends, and you may cancel instead. We will never increase the founding rate.</p>
+
+    <h2>If the Service closes</h2>
+    <p>If we stop providing the Service, we will give you at least 30 days’ notice and refund the unused part of any period you have paid for.</p>
 
     <h2>Termination</h2>
     <p>We may suspend or end your access if you breach these Terms.</p>
 
     <h2>Governing law</h2>
     <p>These Terms are governed by the laws of Zimbabwe, and the courts of Zimbabwe have jurisdiction over any dispute.</p>
+
+    <h2>Keeping these Terms</h2>
+    <p>You can save or print these Terms from this page at any time.</p>
+    <p class="print-wrap"><button type="button" class="btn btn-outline" onclick="window.print()">Print or save these Terms</button></p>
+
+    <h2>Supplier details</h2>
+    <p>The LIFE Briefing is provided by Sparks &amp; Flames Enterprises (PRIVATE) LIMITED, a private limited company registered in Zimbabwe. Registered address: 162 The Chase, Mount Pleasant, Harare, Zimbabwe. WhatsApp +263&nbsp;787&nbsp;948&nbsp;316 · <a href="mailto:pete@peteschuil.live">pete@peteschuil.live</a> · peteschuil.live. Prices are in US dollars.</p>
 
     <h2>Contact</h2>
     <p>Questions about these Terms? Email <a href="mailto:pete@peteschuil.live">pete@peteschuil.live</a>.</p>
@@ -809,5 +873,8 @@
 </script>
 <script>/* GA4 funnel: Join-on-WhatsApp intent + cross-sell to print shop */
 document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("a");if(!a)return;var href=a.getAttribute("href")||"";if(/wa\.me\/263787948316/.test(href)&&/JOIN/i.test(href)){if(window.gtag)gtag("event","join_click",{cta_location:(a.closest("header")?"header":(a.closest("#subscribe")?"subscribe":"hero"))});}else if(/shop\.peteschuil\.live/.test(href)){if(window.gtag)gtag("event","shop_click",{link_url:href});}});</script>
+<script>/* Gate 4d: print fallback for browsers without CSS :has() */
+window.addEventListener("beforeprint",function(){if(/^#(terms|privacy)$/.test(location.hash))document.documentElement.classList.add("print-legal");});
+window.addEventListener("afterprint",function(){document.documentElement.classList.remove("print-legal");});</script>
 </body>
 </html>

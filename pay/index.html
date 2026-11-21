@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<title>The LIFE Briefing</title>
+<!--
+  /pay — Gate 4d (2026-11-09). Sends the member straight on to the payment page,
+  passing ?phone=...&name=... through untouched. No analytics on this page:
+  its address carries the member's phone number and name.
+  WEBAPP_URL is the Apps Script web-app address (not a secret).
+-->
+<script>
+(function(){
+  var W = "https://script.google.com/macros/s/AKfycbwuUDV6gWYFmN0wO2H3gfYH8hxp3IW0z09afgEhuRuKFrpIRnCT1bMyPScnEKUpvCPt3Q/exec";
+  var q = location.search || "";
+  var m = /[?&]phone=([^&]*)/.exec(q), raw = m ? m[1] : "";
+  try { raw = decodeURIComponent(raw.replace(/\+/g, " ")); } catch (e) {}
+  var digits = raw.replace(/\D/g, "");
+  var h = document.documentElement;
+  if (digits.length >= 9) {
+    h.className = "go";
+    window.__lbPay = W + q;
+    location.replace(W + q);
+  } else {
+    h.className = "nophone";
+  }
+})();
+</script>
+<style>
+  :root{--navy:#1C2A36;--gold:#C08A2D;--gold-text:#8A6420;--sand:#F0E8D8;--bone:#FBF8F1;--char:#2A2A28;--hair:#E4D9C2}
+  *{box-sizing:border-box}
+  body{margin:0;padding:48px 20px;background:var(--bone);color:var(--char);text-align:center;
+       font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.6}
+  h1{font-family:Georgia,"Times New Roman",serif;font-weight:600;font-size:24px;color:var(--navy);margin:0 0 4px}
+  .sub{color:var(--gold-text);font-size:13px;letter-spacing:.12em;text-transform:uppercase;margin:0 0 28px}
+  .card{background:#fff;border:1px solid var(--hair);border-radius:14px;padding:30px 22px;max-width:400px;margin:0 auto}
+  .card p{margin:0 0 22px;font-size:16px}
+  .btn{display:inline-block;background:var(--gold);color:var(--navy);text-decoration:none;font-weight:600;
+       font-size:16px;padding:14px 26px;border-radius:10px}
+  .btn:focus-visible{outline:3px solid var(--navy);outline-offset:3px}
+  .small{font-size:14px;color:#54514a;margin:22px 0 0!important}
+  .s-go,.s-nophone{display:none}
+  html.go .s-go,html.nophone .s-nophone{display:block}
+</style>
+</head>
+<body>
+  <h1>The LIFE Briefing</h1>
+  <p class="sub">Living Intentionally for Excellence</p>
+
+  <div class="card s-go" role="status">
+    <p>Taking you to secure payment…</p>
+    <a class="btn" id="go" href="https://wa.me/263787948316">Tap to continue to payment</a>
+  </div>
+
+  <div class="card s-nophone">
+    <p><strong>Please send JOIN to sign up first.</strong><br>It takes a minute on WhatsApp. Once you have answered a few quick questions, you will get a Continue to payment button.</p>
+    <a class="btn" href="https://wa.me/263787948316?text=JOIN">Send JOIN on WhatsApp</a>
+    <p class="small">Already a member? Send HELP in our WhatsApp chat, and Pete or the team will reply personally.</p>
+  </div>
+
+  <noscript>
+    <div class="card">
+      <p>Please go back to WhatsApp and tap Continue to payment again.</p>
+    </div>
+  </noscript>
+
+<script>
+  if (window.__lbPay) document.getElementById("go").href = window.__lbPay;
+</script>
+</body>
+</html>
